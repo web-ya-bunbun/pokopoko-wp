@@ -483,19 +483,25 @@
   @include winSizeM {
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: 7rem 1fr;
+    grid-template-columns: 8rem 1fr;
     gap: 0.5rem;
     align-items: center;
   }
 }
 .secNotice__date {
   display: inline-block;
+  white-space: nowrap;
   @include winSizeS {
     margin-bottom: 0.2rem;
   }
 }
 .secNotice__title {
   font-size: 1.2rem;
+  @include winSizeM {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 }
 .secInquiry {
   background-color: $subColor;

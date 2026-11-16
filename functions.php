@@ -34,7 +34,8 @@ function my_vite_theme_scripts()
   } else {
     //本番環境: npm run build でdist フォルダに書き出されたファイルを読み込む
     wp_enqueue_style('my-theme-style', get_template_directory_uri() . '/dist/assets/main.css', array(), '1.0.0');
-    wp_enqueue_script_module('my-theme-main-module', get_template_directory_uri() . '/dist/assets/main.js', array(), '1.0.0');
+    wp_enqueue_script_module('my-theme-main-module', get_template_directory_uri() . '/dist/assets/main-js.js', array(), '1.0.0');
+    wp_enqueue_style('my-theme-main-module-css', get_template_directory_uri() . '/dist/assets/main-js.css', array('my-theme-style'), '1.0.0');
   }
   // 2. トップページ（front-page.php）のときだけ読み込む
   if (is_front_page()) {
