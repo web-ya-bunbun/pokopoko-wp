@@ -1,0 +1,14 @@
+.DS_Store
+Thumbs.db
+
+.vscode/
+*.suo
+
+node_modules/
+.vite/
+.env
+*.env.local
+*.log
+npm-debug.log*
+
+/dist/

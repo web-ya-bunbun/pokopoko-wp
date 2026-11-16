@@ -1,0 +1,23 @@
+.pageTitle {
+  background-image: url(./img/title_bg_info.jpg);
+}
+.infoContents {
+  margin-inline: auto;
+  padding-block: min(10vw, 4rem);
+  @include winSizeM {
+    max-width: 920px;
+    padding-inline: $pcPadding;
+  }
+  @include winSizeS {
+    padding-inline: $spPadding;
+  }
+}
+
+/* 投稿コンテンツ表示部分（ブロックエディタ） */
+.wp-block-heading {
+  margin-bottom: 1em;
+}
+.wp-block-paragraph {
+  display: block;
+  margin-block-end: 1em;
+}

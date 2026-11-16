@@ -1,0 +1,161 @@
+.pageTitle {
+  background-image: url(./img/title_bg_news.jpg);
+}
+.newsTitle {
+  margin-block-end: 2.5rem;
+  font-size: 2.5rem;
+  line-height: $titleLineHeight;
+}
+.newsContents {
+  margin-inline: auto;
+  padding-block: min(10vw, 4rem);
+  @include winSizeM {
+    max-width: 920px;
+    padding-inline: $pcPadding;
+  }
+  @include winSizeS {
+    padding-inline: $spPadding;
+  }
+}
+.newsList__item:not(:last-child) {
+  border-bottom: 1px dotted $textColor;
+}
+.newsList__link {
+  padding-block: 1rem;
+  transition: background-color 0.3s;
+  &:hover {
+    background-color: $baseColor;
+  }
+  @include winSizeM {
+    display: flex;
+    align-items: center;
+  }
+  @include winSizeS {
+    display: block;
+  }
+}
+.newsList__date {
+  padding-left: 1.5rem;
+  background: url(img/nikukyu3.svg) no-repeat 0.2rem center;
+  background-size: 1rem;
+  white-space: nowrap;
+  line-height: $titleLineHeight;
+  @include winSizeM {
+    width: 10rem;
+  }
+}
+.newsList__title {
+  @include winSizeM {
+    flex: 1;
+  }
+}
+.pageNavi {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+.pageNavi__item--prev,
+.pageNavi__item--next {
+  font-weight: bold;
+  > a {
+    background-size: 0.7rem;
+    transition: background 0.3s;
+    background-repeat: no-repeat;
+  }
+}
+.pageNavi__item--prev {
+  > a {
+    padding-left: 1.2rem;
+    background-image: url(img/arrow_l.svg);
+    background-position: left 2px center;
+    &:hover {
+      background-position-x: left 0;
+    }
+  }
+}
+.pageNavi__item--next {
+  > a {
+    padding-right: 1.2rem;
+    background-image: url(img/arrow_r.svg);
+    background-position: right 2px center;
+    &:hover {
+      background-position-x: right 0;
+    }
+  }
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-block: 3rem;
+  font-weight: bold;
+}
+.pagination__list {
+  display: flex;
+}
+.pagination__arrow {
+  > a {
+    background-size: 0.7rem;
+    transition: background 0.3s;
+    background-repeat: no-repeat;
+  }
+}
+.pagination__arrow--prev {
+  margin-right: 1.5rem;
+  > a {
+    padding-left: 1.2rem;
+    background-image: url(img/arrow_l.svg);
+    background-position: left 2px center;
+    &:hover {
+      background-position-x: left 0;
+    }
+  }
+}
+.pagination__arrow--next {
+  margin-left: 1.5rem;
+  > a {
+    padding-right: 1.2rem;
+    background-image: url(img/arrow_r.svg);
+    background-position: right 2px center;
+    &:hover {
+      background-position-x: right 0;
+    }
+  }
+}
+.pagination__num {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  margin-inline: 0.5rem;
+  .pagination__link,
+.pagination__current {
+  display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    
+}
+.pagination__link {
+background-color: $baseColor;
+transition: all .3s;
+&:hover {
+  background-color: $accentColor;
+  color: $white;
+}
+}
+.pagination__current {
+  background-color: $textColor;
+  color: $white;
+}
+
+}
+
+/* 投稿コンテンツ表示部分（ブロックエディタ） */
+.wp-block-paragraph {
+  display: block;
+  margin-block-end: 1em;
+}

@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+/*--------------------
+  basic
+--------------------*/
+html {
+  font-size: $rootFontSize;
+  scroll-behavior: smooth;
+}
+body {
+  color: $basicFontColor;
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  -webkit-text-size-adjust: none;
+  text-autospace: normal;
+  position: relative;
+}
+/* link */
+a {
+  color: $linkFontColor;
+  text-decoration: none;
+}
