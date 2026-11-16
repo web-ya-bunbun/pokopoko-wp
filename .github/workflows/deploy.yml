@@ -1,0 +1,49 @@
+name: Build and Deploy to Server
+
+# mainブランチ（またはmaster）にpushされた時に自動実行
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. GitHubから最新のソースコードを取得
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Node.jsの環境をセットアップ
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      # 3. パッケージのインストールと本番ビルド（ここを自動化！）
+      - name: Install dependencies and Build
+        run: |
+          npm ci
+          npm run build
+
+      # 4. 必要なファイルだけをレンタルサーバーへFTP転送
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          # サーバー側のアップロード先パス（末尾のスラッシュ必須）
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          # 本番サーバーに不要な開発用ファイルは転送から除外する
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/src/**
+            **/public/**
+            package.json
+            package-lock.json
+            vite.config.js
