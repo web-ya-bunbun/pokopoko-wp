@@ -101,12 +101,13 @@ function my_theme_sync_acf_slug_on_save($post_id)
 // ACFがデータをデータベースに書き込んだ「後」に実行されるように、優先度20でフック
 add_action('acf/save_post', 'my_theme_sync_acf_slug_on_save', 20);
 
-//catsアーカイブのランダム表示
-function custom_post_type_archive_random($query)
+//catsアーカイブの表示設定
+function custom_post_type_archive_setting($query)
 {
   // 管理画面ではなく、メインクエリであり、かつ指定したカスタム投稿タイプのアーカイブページの場合
   if (! is_admin() && $query->is_main_query() && $query->is_post_type_archive('cats')) {
-    $query->set('orderby', 'rand');
+    $query->set('orderby', 'rand'); //ランダム表示
+    $query->set( 'posts_per_page', -1 ); //件数上限なし
   }
 }
-add_action('pre_get_posts', 'custom_post_type_archive_random');
+add_action('pre_get_posts', 'custom_post_type_archive_setting');
