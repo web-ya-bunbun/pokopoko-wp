@@ -25,7 +25,7 @@ function my_vite_theme_scripts()
   }
   // ==========================================
 
-  // 1. 全ページ共通のスタイル・JSを読み込む
+  // 全ページ共通のスタイル・JSを読み込む
   if ($is_dev) {
     //開発環境：localhost:5173 からリアルタイムのJSとCSSを読み込む
     wp_enqueue_style('my-theme-style', 'http://localhost:5173/src/main.scss', array(), null);
@@ -37,7 +37,7 @@ function my_vite_theme_scripts()
     wp_enqueue_script_module('my-theme-main-module', get_template_directory_uri() . '/dist/assets/main-js.js', array(), '1.0.0');
     wp_enqueue_style('my-theme-main-module-css', get_template_directory_uri() . '/dist/assets/main-js.css', array('my-theme-style'), '1.0.0');
   }
-  // 2. トップページ（front-page.php）のときだけ読み込む
+  // トップページ（front-page.php）のときだけ読み込む
   if (is_front_page()) {
     if ($is_dev) {
       wp_enqueue_style('my-theme-front', 'http://localhost:5173/src/front-page.scss', array('my-theme-style'), null);
@@ -45,7 +45,7 @@ function my_vite_theme_scripts()
       wp_enqueue_style('my-theme-front', get_template_directory_uri() . '/dist/assets/front-page.css', array('my-theme-style'), '1.0.0');
     }
   }
-  // 3. カフェの猫たちページ用
+  // カフェの猫たちページ用
   if (is_post_type_archive('cats') || is_singular('cats')) {
     if ($is_dev) {
       wp_enqueue_style('my-theme-cats', 'http://localhost:5173/src/page-cats.scss', array('my-theme-style'), null);
@@ -53,7 +53,7 @@ function my_vite_theme_scripts()
       wp_enqueue_style('my-theme-cats', get_template_directory_uri() . '/dist/assets/page-cats.css', array('my-theme-style'), '1.0.0');
     }
   }
-  // 4. 料金・メニューページ用
+  // 料金・メニューページ用
   if (is_page('menu')) {
     if ($is_dev) {
       wp_enqueue_style('my-theme-menu', 'http://localhost:5173/src/page-menu.scss', array('my-theme-style'), null);
@@ -61,7 +61,7 @@ function my_vite_theme_scripts()
       wp_enqueue_style('my-theme-menu', get_template_directory_uri() . '/dist/assets/page-menu.css', array('my-theme-style'), '1.0.0');
     }
   }
-  // 3. お知らせページ用
+  // お知らせページ用
   if (is_home() || is_post_type_archive('post') || is_singular('post')) {
     if ($is_dev) {
       wp_enqueue_style('my-theme-news', 'http://localhost:5173/src/page-news.scss', array('my-theme-style'), null);
@@ -69,7 +69,7 @@ function my_vite_theme_scripts()
       wp_enqueue_style('my-theme-news', get_template_directory_uri() . '/dist/assets/page-news.css', array('my-theme-style'), '1.0.0');
     }
   }
-  // 5. お店情報ページ用
+  // お店情報ページ用
   if (is_page('info')) {
     if ($is_dev) {
       wp_enqueue_style('my-theme-info', 'http://localhost:5173/src/page-info.scss', array('my-theme-style'), null);
@@ -77,12 +77,21 @@ function my_vite_theme_scripts()
       wp_enqueue_style('my-theme-info', get_template_directory_uri() . '/dist/assets/page-info.css', array('my-theme-style'), '1.0.0');
     }
   }
-  // 5. お問い合わせページ用
+  // お問い合わせページ用
   if (is_page('contact')) {
     if ($is_dev) {
       wp_enqueue_style('my-theme-contact', 'http://localhost:5173/src/page-contact.scss', array('my-theme-style'), null);
     } else {
       wp_enqueue_style('my-theme-contact', get_template_directory_uri() . '/dist/assets/page-contact.css', array('my-theme-style'), '1.0.0');
+    }
+  }
+  //404ページ用
+    // 5. お問い合わせページ用
+  if (is_404()) {
+    if ($is_dev) {
+      wp_enqueue_style('my-theme-404', 'http://localhost:5173/src/page-404.scss', array('my-theme-style'), null);
+    } else {
+      wp_enqueue_style('my-theme-404', get_template_directory_uri() . '/dist/assets/page-404.css', array('my-theme-style'), '1.0.0');
     }
   }
 }

@@ -1,0 +1,30 @@
+.pageTitle {
+  background-image: url(./img/title_bg_404.jpg);
+}
+.pageContents {
+  margin-inline: auto;
+  padding-block: min(10vw, 4rem);
+  @include winSizeM {
+    max-width: 920px;
+    padding-inline: $pcPadding;
+    p {
+      text-align: center;
+    }
+  }
+  @include winSizeS {
+    padding-inline: $spPadding;
+  }
+}
+.secTitle--404 {
+  padding-top: 0;
+}
+.sorryImg {
+  width: 100px;
+  margin-inline:auto;
+  margin-bottom: 2rem;
+}
+.btnArea {
+  display: flex;
+  justify-content: center;
+  padding-top: 3rem;
+}
