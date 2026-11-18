@@ -152,7 +152,7 @@
       <?php
       $args = [
         'post_type' => 'cats',
-        'posts_per_page' => -1,
+        'posts_per_page' => 12,
         'no_found_rows' => true,
         'orderby'        => 'rand'
       ];
