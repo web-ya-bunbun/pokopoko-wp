@@ -13,11 +13,11 @@ get_header();
         </div>
         <div class="contactTab">
           <div class="contactTab__panel js-tab-panel" id="panel-reservation" role="tabpanel" aria-labelledby="tabBtn-reservation" tabindex="0">
-            <p class="contactTab__txt">こちらのカレンダーからお店のご予約ができます。<br>お電話でのご予約も受け付けております。<br>TEL：000-000-0000</p>
+            <p class="contactTab__txt">こちらのカレンダーからお店のご予約ができます。<br>お電話でのご予約も受け付けております。<br>TEL：000-000-0000<br>※サンプルサイトのため、実際に予約はできません。</p>
             <?php echo apply_shortcodes('[booking_package id=3]'); ?>
           </div>
           <div class="contactTab__panel js-tab-panel" id="panel-contact" role="tabpanel" aria-labelledby="tabBtn-contact" tabindex="0" hidden>
-            <p class="contactTab__txt">当カフェに関するご質問、ご要望などお気軽にお問い合わせください。</p>
+            <p class="contactTab__txt">当カフェに関するご質問、ご要望などお気軽にお問い合わせください。<br>※サンプルサイトのため、実際にお問い合わせは出来ません。</p>
             <?php echo apply_shortcodes('[contact-form-7 id="5557484" title="コンタクトフォーム 1"]'); ?>
           </div>
         </div>

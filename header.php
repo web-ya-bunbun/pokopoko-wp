@@ -78,15 +78,5 @@
         <?php endforeach; ?>
       </ul>
     </nav>
-    <!-- <nav class="gnav">
-      <ul class="gnavList">
-        <li class="gnavItem"><a href="<?php echo esc_url(get_post_type_archive_link('cats')); ?>">カフェの猫たち</a></li>
-        <li class="gnavItem"><a href="<?php echo esc_url(home_url('/menu/')); ?>">料金・メニュー</a></li>
-        <li class="gnavItem"><a href="<?php echo esc_url(home_url('/news/')); ?>">お知らせ</a></li>
-        <li class="gnavItem"><a href="<?php echo esc_url(home_url('/info/')); ?>">お店情報</a></li>
-        <li class="gnavItem">
-          <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="gnavItem__btn btn">ご予約・お問い合わせ</a>
-        </li>
-      </ul>
-    </nav> -->
+    <div class="siteAttention">※このサイトは架空のサンプルサイトです。</div>
   </header>

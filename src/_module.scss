@@ -327,3 +327,12 @@
 .grecaptcha-badge {
   visibility: hidden;
 }
+
+.siteAttention {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: $red;
+  font-size: 0.8rem;
+  line-height: $titleLineHeight;
+}
