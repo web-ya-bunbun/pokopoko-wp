@@ -18,6 +18,7 @@ export default defineConfig({
         'page-news': 'src/page-news.scss',
         'page-contact': 'src/page-contact.scss',
         'page-info': 'src/page-info.scss',
+        'page-notfound': 'src/page-notfound.scss',
       }, // 監視・コンパイルする主体のファイル
       output: {
         entryFileNames: 'assets/[name].js',
