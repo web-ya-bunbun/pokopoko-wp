@@ -89,9 +89,9 @@ function my_vite_theme_scripts()
     // 5. お問い合わせページ用
   if (is_404()) {
     if ($is_dev) {
-      wp_enqueue_style('my-theme-404', 'http://localhost:5173/src/page-404.scss', array('my-theme-style'), null);
+      wp_enqueue_style('my-theme-notfound', 'http://localhost:5173/src/page-notfound.scss', array('my-theme-style'), null);
     } else {
-      wp_enqueue_style('my-theme-404', get_template_directory_uri() . '/dist/assets/page-404.css', array('my-theme-style'), '1.0.0');
+      wp_enqueue_style('my-theme-notfound', get_template_directory_uri() . '/dist/assets/page-notfound.css', array('my-theme-style'), '1.0.0');
     }
   }
 }
