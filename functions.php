@@ -86,7 +86,6 @@ function my_vite_theme_scripts()
     }
   }
   //404ページ用
-    // 5. お問い合わせページ用
   if (is_404()) {
     if ($is_dev) {
       wp_enqueue_style('my-theme-notfound', 'http://localhost:5173/src/page-notfound.scss', array('my-theme-style'), null);
